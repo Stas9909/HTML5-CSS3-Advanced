@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .player {
+            position: absolute;
+            width: auto;
+            height: auto;
+            background-color: darkslategrey;
+        }
+
+        #video {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 3px solid darkslategrey;
+        }
+
+        img {
+            float: left;
+        }
+
+        #fullButton {
+            float: right;
+        }
+
+        #muteOn,
+        #muteOff {
+            background-color: darkslategrey;
+            height: 50px;
+            width: 50px;
+            color: white;
+            font-size: 30px;
+            border: none;
+        }
+
+        #audio {
+            width: auto;
+            height: auto;
+            /* margin-right: 250px */
+        }
+
+        #divbtn{
+            position: absolute;
+            display: flex;
+            top: 490px;
+        }
+
+        .btn{
+            width: auto;
+            margin-right: 12px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player">
+        <video id="video">
+            <source id="video1" src="video/vsvideo.mp4" />
+            <source id="video2" src="video/document_5264898811267915703.mp4" />
+            <source id="video3" src="video/QinduoXu_1028x720_1569290023026966528.mp4" />
+        </video>
+        <div class="controls">
+            <div>
+                <img id="play" src="img/icons8_play.png" alt="">
+            </div>
+            <div>
+                <img id="stop" src="img/icons8-stop.png" alt="">
+            </div>
+            <div>
+                <img id="rewindForward" src="img/icons8-next.png" alt="">
+            </div>
+            <div>
+                <img id="rewindBack" src="img/icons8-prev.png" alt="">
+            </div>
+            <div>
+                <img id="fullButton" src="img/icons8-full.png" alt="">
+            </div>
+            <div id="audio">
+                <input id="muteOn" type="button" value="+">
+                <input id="muteOff" type="button" value="-">
+            </div>
+        </div>
+    </div>
+    <div id="divbtn">
+        <input class="btn" id="first" type="button" value="video 1">
+        <input class="btn" id="second" type="button" value="video 2">
+        <input class="btn" id="third" type="button" value="video 3">
+        <!-- <input class="btn" id="fourth" type="button" value="localStorage"> -->
+    </div>
+    <script>
+        window.onload = function () {
+            let $ = function (id) {
+                return document.getElementById(id)
+            }
+            let video = $("video");
+
+            $("play").onclick = function (e) {
+                if (video.paused) {
+                    video.play();
+                    e.target.src = "img/icons8-pause.png";
+                }
+                else {
+                    video.pause();
+                    e.target.src = "img/icons8_play.png";
+                }
+            }
+
+            $("stop").onclick = function (e) {
+                video.pause();
+                video.currentTime = 0;
+                e.target.src = "img/icons8-stop.png";
+            }
+
+            $("rewindForward").onclick = function (e) {
+                video.currentTime += 10
+            }
+
+            $("rewindBack").onclick = function (e) {
+                video.currentTime += 10
+            }
+
+            $("muteOn").onclick = function (e) {
+                video.currentTime += 10
+            }
+
+            $("fullButton").onclick = function (e) {
+                video.requestFullscreen();
+            }
+
+            $("video").ondblclick = function (e) {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen()
+                }
+                else { this.requestFullscreen() }
+            }          
+            
+            let buttons = document.querySelectorAll(".btn");
+            buttons.forEach((button) => button.addEventListener("click", function (){
+                if(this.id == "first"){
+                    console.log(this.id == "first")
+                    video.src="video/vsvideo.mp4";
+                    video.play()
+                }
+                if(this.id == "second"){
+                    video.src="video/document_5264898811267915703.mp4";
+                    video.play()
+                  
+                }
+                if(this.id == "third"){
+                    video.src="video/QinduoXu_1028x720_1569290023026966528.mp4";
+                    video.play()
+                }
+            }));    
+        }
+
+        let vid1=document.querySelector("#video1")
+        console.log(vid1)
+        console.log(vid1.src)
+        let vid2=document.querySelector("#video2")
+        console.log(vid2)
+        console.log(vid2.src)
+        let vid3=document.querySelector("#video3")
+        console.log(vid3)
+        console.log(vid3.src)
+        let input1=document.querySelector("#first")
+        let input2=document.querySelector("#second")
+        let input3=document.querySelector("#third")
+        
+
+        window.onunload=function(){
+                localStorage.setItem("key1", video.currentTime)
+                localStorage.setItem("key2", video.currentSrc)
+            }
+                
+        let loadedData=localStorage.getItem("key1")    
+        video.currentTime=loadedData    
+        
+        let loadedSrc=localStorage.getItem("key2")    
+        video.currentSrc=loadedData
+        console.log(video.currentSrc)
+
+        // loadedData === loadedSrc;
+        video.src=loadedSrc;
+
+        
+
+        
+    </script>
+</body>
+
+</html>

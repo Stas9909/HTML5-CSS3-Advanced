@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid {
+            margin: 10px;
+            display: grid;
+            grid-template: 80px 290px 55px 150px 170px/repeat(4, 1fr);
+            gap: 10px;
+            min-width: 640px;
+        }
+
+        #grid div{
+            padding: 0;
+            margin: 0;
+        }
+
+        .headerleft{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        h1{
+            color: rgb(82, 219, 82);
+            font-size: 70px;
+            justify-self: end;
+            padding: 0;
+            margin: 0;
+        }
+
+        .parinheaderleft{
+            color: rgb(197, 190, 190);
+            padding: 0;
+            margin: 7px;
+            font-size: 50px;
+        }
+
+        .headerright{
+            display: grid;        
+        }
+
+        #grid .headerright:nth-child(2) {
+            grid-column: 2/5;
+            grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+        }
+
+        .parinheaderright{
+            background-color: rgb(82, 219, 82);
+            padding: 0;
+            margin: 1px;
+            height: 55%;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            word-spacing: 60px;
+        }
+
+        /* .divforimg {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            margin: 0;
+            padding: 0;
+        } */
+
+        #grid .divforimg:nth-child(3) {
+            grid-column: 1/3;
+            grid-row: 2;
+        }
+
+        .imgleaf{
+            width: 100%;
+            height: 100%;
+        }
+
+        .divformidtext{
+            display: grid;
+            height: 60%
+        }
+
+        #grid .divformidtext:nth-child(4){
+            grid-column: 3/5;
+            grid-row: 2;
+                        
+        }
+
+        h2{       
+            font-size: 30px; 
+            color: grey;
+            padding: 0;
+            margin: 0;
+        }
+
+        .parindivmidtext{
+            color: grey;
+            padding: 0;
+            margin: 0;
+        }
+
+        #grid .fornewsstr:nth-child(5) {
+            grid-column: 1/5;
+            grid-row: 3;
+        }
+
+        .imgnews{
+            height: 100%;
+            width: 100%;
+        }
+
+        h3{
+            margin: 0;
+            color: gray;
+        }
+
+        .parforlowerstr{
+            margin-top: 5px;
+            color: gray;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        <div class="headerleft">
+            <h1>BIO</h1>
+            <p class="parinheaderleft">life</p>
+        </div>
+        <div class="headerright">
+            <p class="parinheaderright">Home</p>
+            <p class="parinheaderright">Services News</p>
+            <p class="parinheaderright">About Contact</p>
+            <p class="parinheaderright">Block Regions</p>
+            <p class="parinheaderright">Typography</p>
+        </div>
+        <!-- <div class="divformidstr"> -->
+            <div class="divforimg">
+                <img class="imgleaf" src="img/листья-пальмы-крупного-плана-от-центра-105581657.jpg" alt="">
+            </div>
+            <div class="divformidtext">
+                <h2>Learn about Leaves</h2>
+                <p class="parindivmidtext">A leaf is a flat, thin plant organ that uses the sun to make its own food. In general leaves are green and use the chemical called chlorophyll to trap energy from the sun. This process is known as Photosynthesis. The energy is used to combine water from the soil and carbon dioxide gas from the air to make sugar. Oxygen is released during this process a process called Respiration. The leaf acts almost like a solar panel for attracting energy from the sun. Leaves are prominent in the human diet as leaf vegetables like lettuce.You may not realize it but we eat some form of leaf almost every day…well I know I do!</p>
+            </div>
+        <!-- </div> -->
+        <div class="fornewsstr">
+            <h2 class="parindivnews">News</h2>
+        </div>
+        <div>
+            <img class="imgnews" src="img/image01.jpg" alt="">
+        </div>
+        <div>
+            <img class="imgnews" src="img/image02.jpg" alt="">
+        </div>
+        <div>
+            <img class="imgnews" src="img/image03.jpg" alt="">
+        </div>
+        <div>
+            <img class="imgnews" src="img/image04.jpg" alt="">
+        </div>
+        <div>
+            <h3>Lorem Ipsum</h3>
+            <p class="parforlowerstr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, itaque dolores libero molestiae deleniti praesentium maiores earum minus illum beatae.</p>
+        </div>
+        <div>
+            <h3>Lorem Ipsum</h3>
+            <p class="parforlowerstr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt necessitatibus dicta nemo rerum tenetur nam! Suscipit, consequuntur. </p>
+        </div>
+        <div>
+            <h3>Lorem Ipsum</h3>
+            <p class="parforlowerstr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quae corrupti. Consequatur qui magnam sit et nobis sequi voluptatibus, laboriosam.</p>
+        </div>
+        <div>
+            <h3>Lorem Ipsum</h3>
+            <p class="parforlowerstr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium molestias eum reiciendis vitae. Praesentium minus aperiam vero vitae voluptas maxime asperiores.</p>
+        </div>
+    </div>
+</body>
+
+</html>

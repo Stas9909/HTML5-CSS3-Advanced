@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 600px;
+            height: 500px;
+            background-color: bisque;
+            min-width: 600px;
+        }
+
+        .image {
+            background-image: url("kataloniya-na-karte-ispanii-2.jpg");
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            /* filter: grayscale(); */
+        }
+
+        span {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            position: absolute;
+            animation: animate 1s infinite;
+            animation-play-state: running;
+        }
+
+        p {
+            width: auto;
+            height: auto;
+            background-color: black;
+            position: absolute;
+            color: white;
+            font-size: 10px;
+            padding: 7px;
+            border-radius: 7px;
+            margin-top: 15px;
+            font-weight: bold;;
+            visibility: hidden;
+        }
+
+        #firstPoint {
+            left: 249px;
+            top: 206px;
+        }
+
+        #firstPoint:hover {
+            animation-play-state: paused;
+            background-color: red;
+        }
+
+        #firstPoint:hover #firstPointPar{
+            visibility: visible;
+            transform: translate(-27px);
+            transition: 1s;
+        }
+
+        #secondPoint {
+            left: 144px;
+            top: 390px;
+        }
+
+        #secondPoint:hover {
+            animation-play-state: paused;
+            background-color: red;
+        }
+
+        #secondPoint:hover #secondPointPar{
+            visibility: visible;
+            transform: translate(-27px);
+            transition: 1s;
+        }
+
+        #thirdPoint {
+            right: 66px;
+            top: 245px;
+        }
+
+        #thirdPoint:hover {
+            animation-play-state: paused;
+            background-color: red;
+        }
+
+        #thirdPoint:hover #thirdPointPar{
+            visibility: visible;
+            transform: translate(-27px);
+            transition: 1s;
+        }
+
+        #fourthPoint {
+            right: 95px;
+            top: 139px;
+        }
+
+        #fourthPoint:hover {
+            animation-play-state: paused;
+            background-color: red;
+        }
+
+        #fourthPoint:hover #fourthPointPar{
+            visibility: visible;
+            transform: translate(-27px);
+            transition: 1s;
+        }
+
+        @keyframes animate {
+
+            from,
+            to {
+                background-color: yellow;
+            }
+
+            25% {
+                background-color: purple;
+            }
+
+            50% {
+                background-color: green;
+            }
+
+            50% {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+                <span id="firstPoint">
+                    <p id="firstPointPar">Желаете приобрести <br/> билеты в Мадрид?</p>
+                </span>
+                <span id="secondPoint">
+                    <p id="secondPointPar">Желаете приобрести <br/> билеты в Севилью?</p>
+                </span> 
+                <span id="thirdPoint">
+                    <p id="thirdPointPar">Желаете приобрести <br/>билеты на Пальму?</p>
+                </span>  
+                <span id="fourthPoint">
+                    <p id="fourthPointPar">Желаете приобрести <br/>билеты в Барселону?</p>
+                </span>
+        </div>
+    </div>
+</body>
+
+</html>

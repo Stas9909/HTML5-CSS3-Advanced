@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            height: 300px;
+            width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery">
+        <img class="img" src="images/frame1.jpg" alt="images/frame1.jpg">
+        <img class="img" src="images/frame2.jpg" alt="images/frame2.jpg">
+        <img class="img" src="images/frame3.jpg" alt="images/frame3.jpg">
+        <img class="img" src="images/frame4.jpg" alt="images/frame4.jpg">
+        <img class="img" src="images/frame5.jpg" alt="images/frame5.jpg">
+        <img class="img" src="images/frame6.jpg" alt="images/frame6.jpg">
+    </div>
+    <script>
+        window.addEventListener("load", () => {
+          
+            let images = document.querySelectorAll(".img")
+            let counter = 0;      
+
+            let clear = setInterval(function  () {
+                // console.log(images[images.length - 1])
+                if (counter >= images.length) {
+                    counter = 0
+                    // counter === images.length-1
+                    // let stopSetInterval = clearInterval (clear);
+                }
+                if(counter === 0) {
+                    images[images.length -1].style.border="none";
+                } else {
+                    images[counter - 1].style.border="none";
+                }
+                console.log(images[counter].alt)
+                images[counter].style.border = "3px solid black";
+
+                counter++;
+            }, 1000)
+
+            
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" height="500" width="500">
+        Ваш браузер не поддерживает элемент <i>Canvas</i>
+    </canvas>
+    <script>
+        window.addEventListener("load", init);
+
+        function init() {
+
+            let canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+
+            context.beginPath();
+            context.moveTo(00,00);
+            context.lineTo(500,00);
+            context.moveTo(00,00);
+            context.lineTo(00,500);
+
+            for(let i=0; i<50; i++){
+                for (let j=0; j<50; j++){
+                    context.save();
+                    context.translate(0+i*10, 0+j*10);
+                    context.moveTo(0, 0);
+                    context.lineTo(500, 0);
+                    context.moveTo(0, 0);
+                    context.lineTo(0, 500);
+                    context.restore();
+                }
+            }
+            context.closePath();
+            context.stroke();
+         
+        }
+    </script>
+</body>
+
+</html>

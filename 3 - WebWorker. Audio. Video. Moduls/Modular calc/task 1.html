@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin: 12px 4px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="number 1">Число 1</label>
+            <input type="text" id="number1" placeholder="0">
+        </div>
+        <div>
+            <label for="number 2">Число 2</label>
+            <input type="text" id="number2" placeholder="0">
+        </div>
+        <div>
+            <input class="button" type="button" value="+" id="add">
+            <input class="button" type="button" value="-" id="sub">
+            <input class="button" type="button" value="*" id="mul">
+            <input class="button" type="button" value="/" id="div">
+        </div>
+    </form>
+    <p>result: 0</p>
+    <script>
+        window.onload=function(){            
+            let addWorker=new Worker("add.js");
+            let subWorker=new Worker("sub.js");
+            let mulWorker=new Worker("mul.js");
+            let divWorker=new Worker("div.js");
+            let input1=document.querySelector("#number1");
+            let input2=document.querySelector("#number2");
+            let result=document.querySelector("p")
+            let buttons=document.querySelectorAll(".button");
+            buttons.forEach((button) => button.addEventListener("click", clickHandler));
+
+            function clickHandler(e){
+            if(e.target.id=="add"){
+                addWorker.postMessage([input1.value, input2.value]);
+            }
+            if(e.target.id=="sub"){
+                subWorker.postMessage([input1.value, input2.value]);
+            }
+            if(e.target.id=="mul"){
+                mulWorker.postMessage([input1.value, input2.value]);
+            }
+            if(e.target.id=="div"){
+                divWorker.postMessage([input1.value, input2.value]);
+            }
+                console.log("сообщение отправлено")
+                
+            }
+
+            addWorker.onmessage=function(e){
+                result.textContent=e.data;
+                console.log("сообщение получено");
+            }
+
+            subWorker.onmessage=function(e){
+                result.textContent=e.data;
+                console.log("сообщение получено");
+            }
+
+            mulWorker.onmessage=function(e){
+                result.textContent=e.data;
+                console.log("сообщение получено");
+            }
+
+            divWorker.onmessage=function(e){
+                result.textContent=e.data;
+                console.log("сообщение получено");
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>

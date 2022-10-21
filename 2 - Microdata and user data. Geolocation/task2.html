@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 35%;
+            height: 550px;
+            background-color: rgb(238, 242, 242);
+            margin: 170px auto;
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .block{
+            width: 60%;
+            height: 60%;
+            background-color: azure;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1{
+            text-align: center;
+            color: gray;
+        }
+
+        img{
+            width: 50%;
+            height: 50%;
+        }
+
+        .parspan{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .span{
+            color: gray;
+            font-weight: bold;
+        }
+
+        .par{        
+            color: gray;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <section itemscope itemtype="https://schema.org/Person">
+        <div class="block">
+            <h1 interprop="name">Приходько Станислав</h1>
+            <img itemprop="image" src="pict/2BB50C68-4596-43BF-83EA-A5BBFB1B56C6.jpeg" alt="">
+            <p class="parspan" itemprop=affiliation itemscope itemtype="https://schema.org/Organization">
+                <span class="span" itemprop name>tours&Tickets</span>
+                <span class="span" itemprop="url">https://tours4fun.tat.ua/</span>
+            </p>
+            <p class="par" itemprop="birthDate">Дата рождения: 3 апреля 1985</p>
+        </div>
+    </section>
+</body>
+</html>

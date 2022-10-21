@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 3px solid black;
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" height="500" width="500">
+        Ваш браузер не поддерживает элемент <i>Canvas</i>
+    </canvas>
+    <script>
+        window.addEventListener("load", init, false)
+
+        function init(){
+            let canvas=document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+            let logo = new Image();
+            logo.onload = function(){
+                context.rotate(-0.06);
+                context.drawImage(logo, 178, 195, 110, 110)
+                
+            };
+            logo.src="Canadian leaf.png"
+            
+            context.save();
+            context.translate(130,130)
+            context.shadowColor = "grey";
+            context.shadowOffsetX = 5;
+            context.shadowOffsetY = 5;
+            context.shadowBlur = 10;
+
+            let gradient = context.createLinearGradient(0, 0, 270, 0);
+            gradient.addColorStop(0, 'red');
+            gradient.addColorStop(0.20, 'red');
+            gradient.addColorStop(0.20, 'white');
+            gradient.addColorStop(0.65, 'white');
+            gradient.addColorStop(0.65, 'red');
+            gradient.addColorStop(1, 'red');
+
+
+            context.fillStyle = gradient;
+            context.beginPath();       
+            context.moveTo(0, 30);
+            context.bezierCurveTo(90,60, 119,0, 230,30)
+            context.lineTo(230,190)
+            context.bezierCurveTo(90,165, 100,220, 0,190)
+            context.closePath();
+            context.fill()
+            context.restore();
+        }
+    </script>
+</body>
+</html>

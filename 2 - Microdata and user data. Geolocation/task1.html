@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 300px 80px 520px 120px;
+            grid-template-areas: "header""section1""section2""footer";
+            gap: 10px;
+        }
+
+        /* .grid div {
+            display: grid;
+        } */
+
+        .header {
+            grid-area: header;
+            background-image: url(pict/beautiful-tropical-sand-beach-panorama-view-turquoise-sea-water-ocean-wave-green-palm-tree-summer-holidays-exotic-island-vacation-217077594.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            min-width: 960px;
+        }
+
+        .headertext {
+            color: white;
+        }
+
+        .headersearchwindow {
+            width: 60%;
+            height: 70%;
+            background-color: rgba(8, 8, 8, 50%);
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .headerinput {
+            height: 30%;
+            width: 90%;
+            border-radius: 2%;
+            border: none;
+            background-color: rgba(255, 255, 255, 90%);
+            text-align: center;
+            color: rgba(0, 0, 0, 60%);
+            font-family: cursive;
+            font-weight: bold;
+        }
+
+        .headerbutton {
+            height: 30%;
+            width: 90%;
+            border-radius: 2%;
+            border: none;
+            color: white;
+            background-color: aqua;
+        }
+
+
+        .section1 {
+            grid-area: section1;
+        }
+
+        .section2 {
+            grid-area: section2;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            text-align: center;
+            justify-items: center;
+        }
+
+        .divinsection1 {
+            text-align: center;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: 45% 45% 10%;
+            background-color: honeydew;
+        }
+
+        .divinsection2 {
+            text-align: center;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: 45% 45% 10%;
+            background-color: honeydew;
+        }
+
+        .divinsection3 {
+            text-align: center;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: 45% 45% 10%;
+            background-color: honeydew;
+        }
+
+        .divinsection4 {
+            text-align: center;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: 45% 45% 10%;
+            background-color: honeydew;
+        }
+
+        .divforimage {
+            width: 100%;
+            margin-top: 20px;
+            /* display: grid; */
+            /* justify-items: center; */
+            /* align-items: center; */
+        }
+
+        img {
+            width: 90%;
+            height: 80%;
+        }
+
+        .divfordesciption {
+            width: 100%;
+            align-self: start;
+            display: grid;
+        }
+
+        h3 {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding: 0;
+            color: gray;
+        }
+
+        h4 {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding: 0;
+            color: gray;
+        }
+
+        .parindivdescript {
+            width: 90%;
+            margin: 0;
+            padding: 0;
+            justify-self: center;
+            text-align: justify;
+            color: gray;
+            line-height: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 9;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            /* height: 180px; */
+        }
+
+        .btn {
+            width: 90%;
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+            display: grid;
+            align-self: start;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: cornflowerblue;
+        }
+
+        .parfooter {
+            margin: 10px;
+            color: white;
+            font-weight: bold;
+
+        }
+
+        .iframe1,
+        .iframe2,
+        .iframe3,
+        .iframe4 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <header class="header">
+            <h1 class="headertext">БРОНИРОВАНИЕ ТУРОВ ОНЛАЙН</h1>
+            <div class="headersearchwindow">
+                <input class="headerinput" type="text" value="Куда едем?">
+                <input class="headerinput" type="text" value="Город вылета?">
+                <input class="headerinput" type="text" value="Начало тура">
+                <input class="headerinput" type="text" value="Город тура">
+                <input class="headerinput" type="text" value="Город тура">
+                <input class="headerbutton" type="button" value="НАЙТИ ТУРЫ">
+            </div>
+        </header>
+        <section class="section1"></section>
+        <section class="section2">
+            <div class="divinsection1">
+                <div class="divforimage">
+                    <img src="pict/0.jpg" alt="">
+                </div>
+                <div class="divfordesciption">
+                    <h3>Rixos Bab Al Bahr 5*</h3>
+                    <h4>ОАЭ, Рас-эль-Хайма</h4>
+                    <p class="parindivdescript">Расположен на побережье белопесчаного пляжа острова Марьян. Здесь
+                        стильные номера, изысканные рестораны и роскошный Spa-центр. Курорт пользуется огромной
+                        популярностью среди семей, активной молодежи и больших компаний. Концепция “ультра всё включено”
+                        выгодно выделяет этот отель среди других. Множество престижных бутиков, торговый центр Al Hamra
+                        Mall и Аквапарк IceLan находятся всего в десяти минутах от курорта.</p>
+                </div>
+                <!-- <input class="btn" type="button" value="map" id="one" onclick='bindButton()'> -->
+                <input class="btn" type="button" value="map" id="one">
+                <iframe class="iframe1"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d563053.0311253071!2d55.19671332332219!3d25.748221338181782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef609fac1f3abdb%3A0x5e02a3e170c6c0fb!2sRixos%20Bab%20Al%20Bahr!5e0!3m2!1suk!2sua!4v1663592641145!5m2!1suk!2sua"
+                    , width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="divinsection2">
+                <div class="divforimage">
+                    <img src="pict/15905339.jpg" alt="">
+                </div>
+                <div class="divfordesciption">
+                    <h3>Liberty Hotels Lykia 5*</h3>
+                    <h4>Турция, Фетхие, Олюдениз</h4>
+                    <p class="parindivdescript">Отель Liberty Lykia расположен на берегу моря в курортном поселке
+                        Олюдениз. В распоряжении гостей 4 бассейна, поле для мини-гольфа, спа-центр и 750-метровый
+                        частный пляж. Предусмотрены удобства для желающих заняться дайвингом, параглайдингом и другими
+                        видами активного отдыха.</p>
+                </div>
+                <!-- <input class="btn" type="button" value="map" id="two" onclick='bindButton()'> -->
+                <input class="btn" type="button" value="map" id="two">
+                <iframe class="iframe2"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3206.241405091693!2d29.124411514921817!3d36.52416998000635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c03f47d70ea9b5%3A0xdd4477879a6bd781!2sLiberty%20Hotels%20Lykia!5e0!3m2!1suk!2sua!4v1663680841231!5m2!1suk!2sua"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="divinsection3">
+                <div class="divforimage">
+                    <img src="pict/51997572.jpg" alt="">
+                </div>
+                <div class="divfordesciption">
+                    <h3>Bahia Principe Punta Cana 5*</h3>
+                    <h4>Доминикана, Пунта Кана</h4>
+                    <p class="parindivdescript">Отличный отель на территории комплекса Bahia Principe Bavaro Resort в
+                        сказочно красивой Пунта-Кане. Рекомендуем для отдыха любой категории туристов, особенно для
+                        молодежи и семей с детьми. Вас приятно удивят не только комфортабельные номера и красивая
+                        ухоженная территория, но, самое главное, большое количество мероприятий, предусмотренных для
+                        досуга самых маленьких (территория отеля Grand Bahia Principe Turquesa) и, конечно же, для
+                        взрослых. До пляжа или лобби соседних отелей комплекса можно легко добраться на курсирующем по
+                        территории паровозике.</p>
+                </div>
+                <!-- <input class="btn" type="button" value="map" id="three" onclick='bindButton()'> -->
+                <input class="btn" type="button" value="map" id="three">
+                <iframe class="iframe3"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32968.53322094335!2d-68.45982396640643!3d18.707257366564654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea8ebb79cae34eb%3A0x863af97e64bd46da!2sBahia%20Principe%20Grand%20Bavaro!5e0!3m2!1suk!2sua!4v1663681021082!5m2!1suk!2sua"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="divinsection4">
+                <div class="divforimage">
+                    <img src="pict/prev800x468.jpg" alt="">
+                </div>
+                <div class="divfordesciption">
+                    <h3>Sultan Gardens Resort 5*</h3>
+                    <h4>Египет, Шарм-эль-Шейх</h4>
+                    <p class="parindivdescript">Отель расположен в одной из самых живописных бухт Красного моря, что
+                        делает его идеальным местом для любителей дайвинга и снорклинга. К услугам отдыхающих - большая
+                        зеленая ухоженная территория, просторные, современные и реновированные номера, множество баров и
+                        снек-баров, изысканное и разнообразное, а главное - качественное питание. Отель был удостоен
+                        нескольких наград за ландшафтный дизайн и великолепные архитектурные решения. На территории
+                        отеля имеется отличный детский мини-клуб с городком, оборудованным навесом. Вход в море
+                        оборудован для детей (насыпь песка шириной пару метров, огорожена буйками). На пляже
+                        протяженностью 220 м с двумя понтонами всегда найдется свободное место.</p>
+                </div>
+                <!-- <input class="btn" type="button" value="map" id="four" onclick='bindButton()'> -->
+                <input class="btn" type="button" value="map" id="four">
+                <iframe class="iframe4"
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1762.3085629005025!2d34.38146255802881!3d27.944380545673603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssultan%20gardens%20resort%205*2A!5e0!3m2!1suk!2sua!4v1663681121495!5m2!1suk!2sua"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="divfooter">
+                <p class="parfooter">Контакты</p>
+            </div>
+            <div class="divfooter">
+                <p class="parfooter">(067)00-569-05</p>
+            </div>
+            <div class="divfooter">
+                <p class="parfooter">(050)345-14-50</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // document.getElementById("one").addEventListener("click", () => {
+        //     window.open("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d563053.0311253071!2d55.19671332332219!3d25.748221338181782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef609fac1f3abdb%3A0x5e02a3e170c6c0fb!2sRixos%20Bab%20Al%20Bahr!5e0!3m2!1suk!2sua!4v1663592641145!5m2!1suk!2sua", "_blank");          
+        // })
+        // document.querySelector("#two").addEventListener("click", () => {
+        //     window.open("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3206.241405091693!2d29.124411514921817!3d36.52416998000635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c03f47d70ea9b5%3A0xdd4477879a6bd781!2sLiberty%20Hotels%20Lykia!5e0!3m2!1suk!2sua!4v1663680841231!5m2!1suk!2sua");          
+        // })
+        // document.querySelector("#three").addEventListener("click", () => {
+        //     window.open("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32968.53322094335!2d-68.45982396640643!3d18.707257366564654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea8ebb79cae34eb%3A0x863af97e64bd46da!2sBahia%20Principe%20Grand%20Bavaro!5e0!3m2!1suk!2sua!4v1663681021082!5m2!1suk!2sua", "_blank");          
+        // })
+        // document.querySelector("#four").addEventListener("click", () => {
+        //     window.open("https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1762.3085629005025!2d34.38146255802881!3d27.944380545673603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssultan%20gardens%20resort%205*2A!5e0!3m2!1suk!2sua!4v1663681121495!5m2!1suk!2sua", "_blank");          
+        // })
+
+        //ИЛИ ТАК:
+
+
+            // let buttons = document.getElementsByClassName('btn');
+            let buttons = document.querySelectorAll(".btn")
+            console.log(buttons);
+            buttons.forEach((button) => button.addEventListener('click', function (e){
+                let map=e.target.nextElementSibling;
+                console.log(map)
+                map.style.position="absolute";
+                map.style.left="0";
+                map.style.display="block";
+            }))
+
+        // function bindButton() {
+        //     let button = document.getElementById('one');
+        //     let iframe = document.querySelector('.iframe1');
+        //     button.addEventListener('click', function(e) {
+        //         iframe.style.position="absolute"
+        //         iframe.style.display="block";
+        //         iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d563053.0311253071!2d55.19671332332219!3d25.748221338181782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef609fac1f3abdb%3A0x5e02a3e170c6c0fb!2sRixos%20Bab%20Al%20Bahr!5e0!3m2!1suk!2sua!4v1663592641145!5m2!1suk!2sua';
+        //     });
+        // }
+    </script>
+</body>
+
+</html>

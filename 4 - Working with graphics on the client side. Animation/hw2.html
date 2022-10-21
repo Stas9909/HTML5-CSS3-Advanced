@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .img1 {
+            width: auto;
+            height: auto;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery">
+        <img src="images/frame1.jpg" alt="">
+        <img src="images/frame2.jpg" alt="">
+        <img src="images/frame3.jpg" alt="">
+        <img src="images/frame4.jpg" alt="">
+        <img src="images/frame5.jpg" alt="">
+        <img src="images/frame6.jpg" alt="">
+    </div>
+    <!-- <div id="here"></div> -->
+    <script>
+        let images = document.querySelectorAll("img")
+        // let div=document.querySelector("#here")
+        console.log(images)
+
+        function x() {
+            cosnole.log('asd');
+        }
+        
+
+        for (const image of images) {
+            image.addEventListener("mousedown", incrPict)
+
+            function incrPict() {
+                console.log('asd')
+                this.innerHTML=image.className = "img1"
+                image.addEventListener("mousedown", function () {
+                    this.className = "img"
+                    this.removeEventListener("mousedown", incrPict)
+                    this.addEventListener("mousedown", function () {
+                        incrPict()
+                    })
+                })
+            }
+
+        }
+
+        // for (const image of images) {
+        //     image.addEventListener("mousedown", incrPict)
+        //     function incrPict() {
+        //         div.innerHTML=image.outerHTML
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+    <style>
+        img{
+            display: block;
+        }
+
+        button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img id="img" src="images/frame1.jpg" alt="">
+        <button id="changeBtn1">Button1</button>
+        <button id="changeBtn2">Button2</button>
+        <button id="changeBtn3">Button3</button>
+    </div>
+    <script>
+    //  window.onload = function() {
+    //     let img = document.querySelector("#img");
+    //     console.log(img)
+        
+    //     let buttons=document.querySelectorAll('button')
+    //     console.log(buttons)
+    //     buttons.forEach((button) => button.addEventListener("click", function(e){
+    //         if(this.id=="changeBtn1"){
+    //             img.src="images/frame1.jpg"
+    //         }
+    //         if(this.id=="changeBtn2"){
+    //             img.src="images/frame2.jpg"
+    //         }
+    //         if(this.id=="changeBtn3"){
+    //             img.src="images/frame3.jpg"
+    //         }
+    //        }))
+    //     }
+        
+
+        function renderImage(){
+            let array=[]
+            for(let i=0; i<renderImage.arguments.length; i++){
+                images=renderImage.arguments[i]
+                array.push(images)
+                console.log(array)
+                let buttons=document.querySelectorAll('button')
+           buttons.forEach((button) => button.addEventListener("click", function(e){
+            if(e.target.id=="changeBtn1"){
+                img.src=array[0]
+            }
+            if(e.target.id=="changeBtn2"){
+                img.src=array[1]
+            }
+            if(e.target.id=="changeBtn3"){
+                img.src=array[2]
+            }
+           }))
+        }
+        }
+
+        renderImage(
+            "images/frame1.jpg",
+            "images/frame2.jpg",
+            "images/frame3.jpg"
+        )
+
+
+    </script>
+</body>
+
+</html>

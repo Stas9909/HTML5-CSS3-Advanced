@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            padding: 0;
+            margin: 0;
+            width: 600px;
+            height: 500px;
+            background-color: beige;
+            display: flex;
+            
+        }
+
+        .dropDownMenu {
+            /* display: flex;
+            flex-direction: column;  */
+            padding: 0;
+            margin: 0;
+            width: 25%;
+            height: 20px;
+            background-color: darkgray;
+            outline: 1px solid black;
+            text-align: center;
+            position: relative;            
+            /* overflow:hidden; */
+            
+        }
+
+        .subDropDownMenu {
+            padding: 0;
+            width: 100%;
+            margin-top: 2px;
+            position: absolute;  
+            /* visibility: hidden; */
+            overflow:hidden;
+            max-height: 0;     
+            transition: max-height 0.7s;
+            
+        }
+
+        .dropDownMenu:hover .subDropDownMenu{
+            /* visibility: visible; */
+            max-height: 66px; 
+        }
+
+        .subMenu {
+            padding: 0;
+            margin: 0;
+            /* width: 150px; */
+            height: 20px;
+            background-color: white;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <div class="dropDownMenu" id="first">Main
+            <div class="subDropDownMenu">
+                <div class="subMenu">main1</div>
+                <div class="subMenu">main2</div>
+                <div class="subMenu">main3</div>
+            </div>
+        </div>
+        <div class="dropDownMenu" id="second">Production
+            <div class="subDropDownMenu">
+                <div class="subMenu">Production1</div>
+                <div class="subMenu">Production2</div>
+                <div class="subMenu">Production3</div>
+            </div>
+        </div>
+        <div class="dropDownMenu" id="third">Services
+            <div class="subDropDownMenu">
+                <div class="subMenu">Services1</div>
+                <div class="subMenu">Services2</div>
+                <div class="subMenu">Services3</div>
+            </div>
+        </div>
+        <div class="dropDownMenu" id="fourth">News
+            <div class="subDropDownMenu">
+                <div class="subMenu">News1</div>
+                <div class="subMenu">News2</div>
+                <div class="subMenu">News3</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

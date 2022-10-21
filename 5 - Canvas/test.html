@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang="en"
+<head>
+<script type="text/javascript">
+    function addRect(){
+        var canvas1=document.getElementById("myCanvas");
+        var ctx=canvas1.getContext("2d");
+
+        var canvas3=document.getElementById("myCanvas");
+        var ctx3=canvas3.getContext("2d");
+
+        ctx.rect(60,60,180,80);
+        ctx.fillStyle="green";
+        //ctx.shadowColor="black";
+        //ctx.shadowBlur = 10;
+        ctx.fill(); 
+
+
+        ctx3.lineWidth = 3;
+        ctx3.strokeStyle='red'; 
+        ctx3.shadowColor="black";
+        ctx3.shadowBlur = 10;       
+        ctx3.strokeRect(45,45,210,110); 
+    }
+
+    function addOval(){
+        var canvas2=document.getElementById("myCanvas");
+        var context=canvas2.getContext("2d");
+
+        // define center of oval
+        var centerX = 288;
+        var centerY = 250;
+
+        // define size of oval
+        var height = 100;
+        var width = 250;
+
+        var controlRectWidth = width  * 1.33;
+
+        context.beginPath();
+        context.moveTo(centerX,centerY - height/2);
+        // draw left side of oval
+        context.bezierCurveTo(centerX-controlRectWidth/2,centerY-height/2,
+            centerX-controlRectWidth/2,centerY+height/2,
+            centerX,centerY+height/2);
+
+        // draw right side of oval
+        context.bezierCurveTo(centerX+controlRectWidth/2,centerY+height/2,
+            centerX+controlRectWidth/2,centerY-height/2,
+            centerX,centerY-height/2);
+
+        context.fillStyle="red";
+        context.fill();
+        context.lineWidth=5;
+        context.strokeStyle="blue"; 
+        context.stroke();   
+        context.closePath();    
+    }
+</script>
+
+</head>
+<body onload="addRect(); addOval();">
+    <canvas id="myCanvas" width="700" height="400">
+    Your browser does not support the canvas element.
+    </canvas>
+</body>
+</html>
